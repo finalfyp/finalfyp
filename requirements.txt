@@ -1,0 +1,14 @@
+streamlit
+pandas
+plost
+Patch
+st_folium
+join
+seaborn
+matplotlib.pyplot
+altair
+folium
+plotly.express
+numpy
+plotly.graph_objects
+plotly.figure_factory
