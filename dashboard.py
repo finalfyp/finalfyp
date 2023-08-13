@@ -15,21 +15,16 @@ import plotly.graph_objects as go
 import plotly.figure_factory as ff
 
 
-st.set_page_config(page_title=" Job Postings Dashboard | Real Time IT Skills Recommender and Predictor",page_icon="../assets/img/favicons/favicon.png", layout='wide', initial_sidebar_state='expanded')
+st.set_page_config(page_title=" Job Postings Dashboard | Real Time IT Skills Recommender and Predictor", layout='wide', initial_sidebar_state='expanded')
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-st.sidebar.image("../assets/img/logo.png", use_column_width=True)
 st.sidebar.header('Job Postings Dashboard')
 st.title('Job Postings Dashboard')
 
+# Data
 @st.cache_data(ttl=600)
-def load_data():
-    # Initialize connection.
-    conn = st.experimental_connection("all_data1", type='sql')
-    # Perform query.
-    jobs_dataset = conn.query('SELECT * from all_data1;', ttl=600)
-    return jobs_dataset
+jobs_dataset = pd.read_csv('all_data1.csv')
 
 # Load data using cached function
 jobs_dataset = load_data()
