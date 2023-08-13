@@ -22,12 +22,7 @@ with open('style.css') as f:
 st.sidebar.header('Job Postings Dashboard')
 st.title('Job Postings Dashboard')
 
-# Data
-@st.cache_data(ttl=600)
 jobs_dataset = pd.read_csv('all_data1.csv')
-
-# Load data using cached function
-jobs_dataset = load_data()
 
 #Date filteration Row
 st.markdown('### Select Date to Filter the Data')
