@@ -1,7 +1,6 @@
 from ntpath import join
 import streamlit as st
 import pandas as pd
-import plost
 import seaborn as sns
 import matplotlib.pyplot as plt
 import altair as alt
